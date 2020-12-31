@@ -1,22 +1,12 @@
 cmake_minimum_required (VERSION 3.9 FATAL_ERROR)
 
-project (inversion LANGUAGES C)
-
+project (ctypes_extension LANGUAGES C)
 
 set(CMAKE_C_FLAGS_DEBUG "-g -Og -Wall")
-set(CMAKE_CXX_FLAGS_DEBUG "-g -Og -Wall")
-
 set(CMAKE_C_FLAGS_RELEASE "-O3 -march=native")
-set(CMAKE_CXX_FLAGS_RELEASE "-O3 -march=native")
-
-set(CMAKE_C_FLAGS_RELWITHDEBINFO "${CMAKE_C_FLAGS_RELEASE} -g")
-set(CMAKE_CXX_FLAGS_RELWITHDEBINFO "${CMAKE_CXX_FLAGS_RELEASE} -g")
-set(CMAKE_CUDA_FLAGS_RELWITHDEBINFO "${CMAKE_CUDA_FLAGS_RELEASE} -g")
 
 set(CMAKE_RUNTIME_OUTPUT_DIRECTORY ${PROJECT_BINARY_DIR}/bin)
 set(CMAKE_LIBRARY_OUTPUT_DIRECTORY ${PROJECT_BINARY_DIR}/lib)
-
-
 
 add_library(mandelbrot SHARED mandelbrot.c)
 add_executable(mandelbrot_main mandelbrot.c)
