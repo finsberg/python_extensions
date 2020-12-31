@@ -1,0 +1,10 @@
+name: python_extensions
+channels:
+  - conda-forge
+  - defaults
+dependencies:
+  - numpy
+  - matplotlib
+  - numba
+  - pybind11
+  - cmake
