@@ -72,7 +72,7 @@ py::array_t<int> mandelbrot(double xmin, double xmax, double ymin, double ymax, 
 
     return py::array_t<int>(
         {width, height},                      // shape
-        {height * sizeof(int), sizeof(int)},  // C-style contiguous strides for double
+        {height * sizeof(int), sizeof(int)},  // C-style contiguous strides
         output,                               // the data pointer
         free_when_done);                      // numpy array references this parent
 }
