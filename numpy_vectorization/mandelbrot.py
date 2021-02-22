@@ -2,7 +2,7 @@ import numpy as np
 import matplotlib.pyplot as plt
 
 
-def mandelbrot_numpy(xmin, xmax, ymin, ymax, width, height, maxiter):
+def mandelbrot_image(xmin, xmax, ymin, ymax, width, height, maxiter):
     x = np.linspace(xmin, xmax, num=width).reshape((1, width))
     y = np.linspace(ymin, ymax, num=height).reshape((height, 1))
     C = np.tile(x, (height, 1)) + 1j * np.tile(y, (1, width))

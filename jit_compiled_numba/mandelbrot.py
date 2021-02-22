@@ -17,8 +17,18 @@ def mandelbrot_pixel_numba(cx, cy, maxiter):
     return 0
 
 
+@numba.jit
+def mandelbrot_image(xmin, xmax, ymin, ymax, width, height, maxiter):
+    x = np.linspace(xmin, xmax, width)
+    y = np.linspace(ymin, ymax, height)
+    img = np.empty((width, height))
+    for i in range(width):
+        for j in range(height):
+            img[i, j] = mandelbrot_pixel_numba(x[i], y[j], maxiter)
+    return img
+
 @numba.jit(parallel=True)
-def mandelbrot_parallel_numba(xmin, xmax, ymin, ymax, width, height, maxiter):
+def mandelbrot_image_paralell(xmin, xmax, ymin, ymax, width, height, maxiter):
     x = np.linspace(xmin, xmax, width)
     y = np.linspace(ymin, ymax, height)
     img = np.empty((width, height))
@@ -26,6 +36,7 @@ def mandelbrot_parallel_numba(xmin, xmax, ymin, ymax, width, height, maxiter):
         for j in range(height):
             img[i, j] = mandelbrot_pixel_numba(x[i], y[j], maxiter)
     return img
+
 
 
 if __name__ == "__main__":
