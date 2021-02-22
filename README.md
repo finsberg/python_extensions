@@ -1,3 +1,5 @@
+[![Binder](https://mybinder.org/badge_logo.svg)](https://mybinder.org/v2/gh/finsberg/python_extensions/HEAD?filepath=index.ipynb)
+
 # Writing a python extension
 
 In this repository I have collected a few examples on how to write extensions for python. In all examples we will generate the [Madelbrot set](https://en.wikipedia.org/wiki/Mandelbrot_set). This is a relatively computationally heavy algorithm which typically would be slow to write in pure python.
@@ -19,7 +21,7 @@ We also compare with other methods such as
 In order to run all example you can install the conda environment that you can find the root directory of this repository
 
 ```
-conda env create -f environment.yaml
+conda env create -f environment.yml
 ```
 
 Finally activate the environment
